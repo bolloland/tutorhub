@@ -1,12 +1,15 @@
 class TutorsController < ApplicationController
+before_action :get_tutor, only: [:show, :edit, :update, :delete]
 
     def index
+        @tutors = Tutor.all
     end
 
     def show
     end
 
     def new 
+        @tutor = Tutor.new
     end
 
     def create 
@@ -15,7 +18,7 @@ class TutorsController < ApplicationController
     def edit 
     end
 
-    def upodate 
+    def update 
     end
 
     def delete 
@@ -23,7 +26,12 @@ class TutorsController < ApplicationController
 
     private
 
-    def params
+    def get_tutor
+    
+    end
+
+
+    def tutor_params
     end
     
 end

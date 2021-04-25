@@ -1,0 +1,101 @@
+class SongsController < ApplicationController
+  def index
+    @songs = Song.all
+  end
+
+  def show
+    @song = Song.find(params[:id])
+  end
+
+  def new
+    @song = Song.new
+    @genres = Genre.all
+  end
+
+  def create
+    @song = Song.new(song_params)
+
+    if @song.save
+      redirect_to @song
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @song = Song.find(params[:id])
+  end
+
+  def update
+    @song = Song.find(params[:id])
+
+    @song.update(song_params)
+
+    if @song.save
+      redirect_to @song
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @song = Song.find(params[:id])
+    @song.destroy
+    flash[:notice] = "Song deleted."
+    redirect_to songs_path
+  end
+
+  private
+
+  def song_params
+    params.require(:song).permit(:title, :artist_name, :genre_id)
+  end
+end
+
+----------------
+class Song < ActiveRecord::Base
+  belongs_to :artist
+  belongs_to :genre 
+  has_many :notes
+
+  def artist_name=(artist_name)
+    self.artist = Artist.find_or_create_by(name: artist_name)
+  end
+
+  def artist_name
+    self.artist ? self.artist.name : nil
+    # if self.artist
+    #   self.artist.name
+    # else
+    #   nil
+  end
+
+  def genre_name=(name)
+    self.genre = Genre.find_or_create_by(name: name)
+  end
+
+  def genre_name
+    self.genre ? self.genre.name : nil
+  end
+
+end
+-----------------------------
+<h1>Create a Song</h1>
+
+<%= form_for @song do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :artist_name %>
+  <%= f.text_field :artist_name %>
+  <br />
+  Choose a Genre:
+  <%= f.collection_select :genre_id, @genres, :name, :name, prompt: true %>
+  <br />
+  
+  
+
+  <%= f.submit %>
+<% end %>
+
+

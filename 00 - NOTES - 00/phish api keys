@@ -1,0 +1,14 @@
+<h1> New Artist: </h1>
+
+<h1><%= @artist.name %></h1>
+The API key for application "bolloland" is: 7F1A22D317943877C58C
+The Public key for application "bolloland" is: F584570CB6D50BDD7648
+Your API key is active!
+
+https://phishnet.api-docs.io/v3/the-phish-net-api/authentication
+
+https://api.phish.net/tutorials
+
+https://github.com/alexebird/phish_dot_net_client
+
+cd ..

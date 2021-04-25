@@ -14,7 +14,7 @@ class LessonsController < ApplicationController
     def edit 
     end
 
-    def upodate 
+    def update 
     end
 
     def delete 
