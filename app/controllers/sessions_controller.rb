@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
   
-  def tutor_welcome
-  end
 
   def tutor_new #find the sessions in db
-   
     # @tutor = Tutor.find_by(username: params[:session][:username])
+  end
+
+  def student_new
   end
 
   def tutor_create #attach the sessions to the user
@@ -17,13 +17,32 @@ class SessionsController < ApplicationController
       else
         render "tutor_new"
       end
-      binding.pry
+  end
+
+  def student_create #attach the sessions to the user
+    @student = Student.find_by(username: params[:session][:username])
+      if @student && @student.authenticate(params[:session][:password])
+        session[:student_id] = @student.id 
+        current_user
+        redirect_to student_path(@student)
+      else
+        render "student_new"
+      end
   end
 
   def tutor_destroy
+    logout
+  end
+
+  def student_destroy
+    logout
   end
 
   def tutor_params
     params.require(:tutor).permit(:id, :username, :password)
-  end   
+  end 
+  
+  def student_params
+    params.require(:student).permit(:id, :username, :password)
+  end 
 end
