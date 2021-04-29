@@ -1,5 +1,17 @@
 <h1>Tutor#new</h1>
 
+<% if @tutor.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
+
+    <ul>
+      <% @tutor.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: @tutor do |f| %>
     <%= f.label "first_name" %>
     <%= f.text_field :first_name %></br>
@@ -18,5 +30,8 @@
     <%= f.label "Biography (please give some additional background to share with your students:" %></br>
     <%= f.text_area :tutor_bio , size: "60x10"%></br>
 
-    <%= f.submit %>
+    <%= f.submit "Create Tutor Account" %>
     <% end %>
+
+    or create an account using Google or Github:
+(after creating redirect to #edit to complete missing fields)
