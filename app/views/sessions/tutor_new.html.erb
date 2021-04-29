@@ -1,0 +1,13 @@
+<h1>Tutor#new</h1>
+
+
+<%= form_for(:session, url: tutor_login_path) do |f| %>
+   
+    <%= f.label "username" %>
+    <%= f.text_field :username %></br>
+    <%= f.label "password" %>
+    <%= f.password_field :password %></br>
+
+    <%= f.submit "Access Your Tutor Account" %>
+<% end %>
+
