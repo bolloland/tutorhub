@@ -1,9 +1,12 @@
 <h1>Student#show</h1>
 
+#Student should only be able to see their page
+
 <h3>Hi <%= @student.first_name %>!</h3></br>
 
 This is your page. From here you can:</br>
 <%= link_to '- edit your personal information', edit_student_path(@student) %> </br>
 <%= link_to '- find a tutor', tutors_path %></br>
 - view your calendar of upcoming lessons</br>
+(students/:student_id/lessons/:lesson_id?</br>
 - delete your account (but why would you want to!?)</br>
