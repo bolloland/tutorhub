@@ -1,1 +1,30 @@
-<h1>Tutor#edit</h1>
+<h1>EDIT Tutor information for:</h1>
+<h2><%= @tutor.first_name %> <%= @tutor.last_name %>, "<%= @tutor.username %>"</br></h2>
+
+<% if @tutor.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
+
+    <ul>
+      <% @tutor.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @tutor do |f| %>
+   
+    <%= f.label :first_name, "First Name:" %>
+    <%= f.text_field :first_name %></br>
+    <%= f.label :last_name, "Last Name:" %>
+    <%= f.text_field :last_name %></br>
+    <%= f.label :years_exp, "Years of Experience:" %>
+    <%= f.text_field :years_exp %></br>
+    <%= f.label :subject_taught, "Subject(s) Taught:" %>
+    <%= f.select :subject_taught, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br>
+    <%= f.label :tutor_bio, "Biography (please give some additional background to share with your students:" %></br>
+    <%= f.text_area :tutor_bio, size: "60x10"%></br>
+  
+    <%= f.submit "Update Your Tutor Information" %>
+<% end %>

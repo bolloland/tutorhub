@@ -14,17 +14,17 @@
 
 <%= form_with model: @student do |f| %>
    
-    <%= f.label :first_name, "First Name" %>
+    <%= f.label :first_name, "First Name:" %>
     <%= f.text_field :first_name %></br>
-    <%= f.label :last_name, "Last Name" %>
+    <%= f.label :last_name, "Last Name:" %>
     <%= f.text_field :last_name %></br>
-    <%= f.label "email" %>
+    <%= f.label "email:" %>
     <%= f.email_field :email %></br>
-    <%= f.label "username" %>
+    <%= f.label "username:" %>
     <%= f.text_field :username %></br>
-    <%= f.label "password" %>
+    <%= f.label "password:" %>
     <%= f.password_field :password %></br>
-    <%= f.label "Grade" %>
+    <%= f.label "Grade:" %>
     <%= f.select :grade, ["6th", "7th", "8th", "9th", "10th", "11th", "12th"] %></br>
     <%= f.label :subject_help, "Subject Area:" %>
     <%= f.select :subject_help, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br>

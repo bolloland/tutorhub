@@ -1,5 +1,16 @@
-<h1>Tutor#new</h1>
+<h1>TutorLogin#new</h1>
 
+<% if @tutor.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
+
+    <ul>
+      <% @tutor.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
 <%= form_for(:session, url: tutor_login_path) do |f| %>
    
