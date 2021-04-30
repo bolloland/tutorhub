@@ -20,7 +20,7 @@
     <%= f.label :last_name, "Last Name:" %>
     <%= f.text_field :last_name %></br>
     <%= f.label :years_exp, "Years of Experience:" %>
-    <%= f.text_field :years_exp %></br>
+    <%= f.select :years_exp, ["1-2 years", "3-5 years", "6-9 years", "10-15 years", "15+ years"]%></br>
     <%= f.label :subject_taught, "Subject(s) Taught:" %>
     <%= f.select :subject_taught, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br>
     <%= f.label :tutor_bio, "Biography (please give some additional background to share with your students:" %></br>
