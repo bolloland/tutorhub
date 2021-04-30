@@ -31,11 +31,11 @@ class SessionsController < ApplicationController
   end
 
   def tutor_destroy
-    logout
+    session.clear
   end
 
   def student_destroy
-    logout
+    session.clear
   end
 
   def tutor_params
