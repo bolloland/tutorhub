@@ -10,7 +10,6 @@ next to their name, and fill out the necessary info to schedule a time to meet. 
     <ul>
     <li><%= t.first_name %> <%= t.last_name %>
     has taught/tutored <%= t.subject_taught %> for <%= t.years_exp %> years</br>
-    for the following grades:</br>
     Bio: <%= t.tutor_bio %>
     <%= link_to "Schedule Lesson", new_lesson_path(t) %>
     </li>
