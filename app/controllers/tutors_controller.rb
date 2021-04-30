@@ -52,7 +52,6 @@ class TutorsController < ApplicationController
         @tutor = Tutor.find_by_id(params[:id])
     end
 
-
     def tutor_params
         params.require(:tutor).permit(:id, :first_name, :last_name, :email, :username, :password, :years_exp, :subject_taught, :tutor_bio)
     end
