@@ -27,7 +27,7 @@
     <%= f.text_field :years_exp %></br>
     <%= f.label :subject_taught, "Subject(s) Taught:" %>
     <%= f.select :subject_taught, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br>
-    <%= f.label :tutor_bio, "Biography (please give some additional background to share with your students:" %></br>
+    <%= f.label :tutor_bio, "Biography (please give some additional background to share with your students, including courses you have taught and their respective grade level:" %></br>
     <%= f.text_area :tutor_bio, size: "60x10"%></br>
 
     <%= f.submit "Create Tutor Account" %>
