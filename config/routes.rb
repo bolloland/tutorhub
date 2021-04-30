@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   resources :lessons
   resources :students
   resources :tutors
-  
-  # get 'tutor_welcome', to: 'sessions#tutor_welcome'
 
   get 'tutor_login', to: 'sessions#tutor_new' 
   post 'tutor_login', to: 'sessions#tutor_create' 

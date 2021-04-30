@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   
 
-  def tutor_new #find the sessions in db
+  def tutor_new #tutor-Login form rendered
     # @tutor = Tutor.find_by(username: params[:session][:username])
   end
 
