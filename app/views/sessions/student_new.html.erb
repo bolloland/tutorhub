@@ -1,0 +1,24 @@
+<h1>StudentLogin#new</h1>
+
+<% if @student.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+    <ul>
+      <% @student.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(:session, url: student_login_path) do |f| %>
+   
+    <%= f.label "username" %>
+    <%= f.text_field :username %></br>
+    <%= f.label "password" %>
+    <%= f.password_field :password %></br>
+
+    <%= f.submit "Access Your Student Account" %>
+<% end %>
+

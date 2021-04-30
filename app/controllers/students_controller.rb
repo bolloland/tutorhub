@@ -52,7 +52,6 @@ class StudentsController < ApplicationController
         @student = Student.find_by_id(params[:id])
     end
 
-
     def student_params
     params.require(:student).permit(:id, :first_name, :last_name, :email, :username, :password, :grade, :subject_help, :student_bio)
     end
