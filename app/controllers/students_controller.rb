@@ -2,7 +2,9 @@ class StudentsController < ApplicationController
     # before_action :get_student, only: [:show, :edit, :update, :delete]
 
     def index
+        @tutor = Tutor.find_by_id(params[:tutor_id])
         @students = Student.all
+        binding.pry
     end
    
     def new 
@@ -10,6 +12,7 @@ class StudentsController < ApplicationController
     end
 
     def show
+        @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:id])
     end
     
@@ -43,10 +46,10 @@ class StudentsController < ApplicationController
 
     private
     
-    def current_user  
-        @current_user ||= session[:current_user_id] && 
-        Student.find_by(id: session[:current_user_id])  
-    end
+    # def current_user  
+    #     @current_user ||= session[:current_user_id] && 
+    #     Student.find_by(id: session[:current_user_id])  
+    # end
 
     def get_student
         @student = Student.find_by_id(params[:id])

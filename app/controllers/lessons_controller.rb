@@ -6,7 +6,7 @@ class LessonsController < ApplicationController
     end
 
     def new 
-     binding.pry   
+    #   @student = Student.find_by_id(params[:student_id])
     end
 
     def create 

@@ -6,7 +6,7 @@
 
 This is your page. From here you can:</br>
 <%= link_to '- edit your personal information', edit_tutor_path(@tutor) %> </br>
-<%= link_to '- find a student', students_path %></br>
+<%= link_to '- find a student', tutor_students_path(@tutor) %></br>
 - view your calendar of upcoming lessons
 (tutors/:tutor_id/lessons/:lesson_id?</br>
 - delete your account (but why would you want to!?)</br>

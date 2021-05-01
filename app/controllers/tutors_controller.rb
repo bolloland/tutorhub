@@ -43,10 +43,10 @@ class TutorsController < ApplicationController
 
     private
     
-    def current_user  
-        @current_user ||= session[:current_user_id] && 
-        Tutor.find_by(id: session[:current_user_id])  
-    end
+    # def current_user  
+        # @current_user ||= session[:current_user_id] && 
+        # Tutor.find_by(id: session[:current_user_id])  
+    # end
 
     def get_tutor
         @tutor = Tutor.find_by_id(params[:id])
