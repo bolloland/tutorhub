@@ -1,10 +1,10 @@
 class StudentsController < ApplicationController
     # before_action :get_student, only: [:show, :edit, :update, :delete]
+    before_action :current_user
 
     def index
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @students = Student.all
-        binding.pry
     end
    
     def new 

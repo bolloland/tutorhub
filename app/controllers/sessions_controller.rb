@@ -34,11 +34,12 @@ class SessionsController < ApplicationController
 
   def tutor_destroy
     session.clear
-    redirect_to root
+    redirect_to root_path
   end
 
   def student_destroy
     session.clear
+    redirect_to root_path
   end
 
   def tutor_params

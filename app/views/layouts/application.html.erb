@@ -11,7 +11,8 @@
   </head>
 
   <body>
-  <%= link_to "View Students", students_path %> - <%= link_to "View Tutors", tutors_path %> - "LOGOUT"
+  <%= link_to "View Students", students_path %> - <%= link_to "View Tutors", tutors_path %> - 
+  <%= link_to "Logout", @current_user.class == Tutor ? tutor_logout_path : student_logout_path %>
     <%= yield %>
   </body>
 </html>

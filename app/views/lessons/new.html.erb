@@ -4,8 +4,10 @@
 tutoring </br>
 <%= @student.first_name %> <%= @student.last_name %></br>
 
-<%= form_with @lesson do |f| %>
+<%= form_with model: @lesson do |f| %>
 
+    <%= f.hidden_field(:tutor_id, :value => @tutor.id) %>
+    <%= f.hidden_field(:student_id, :value => @student.id) %>
     <%= f.label "Location" %>
     <%= f.text_field :location %></br>
     <%= f.label "address_1" %>

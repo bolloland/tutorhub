@@ -1,5 +1,6 @@
 class TutorsController < ApplicationController
 # before_action :get_tutor, only: [:show, :edit, :update, :delete]
+before_action :current_user
 
     def index
         @tutors = Tutor.all
