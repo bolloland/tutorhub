@@ -1,4 +1,5 @@
 <h1>Student#index</h1>
+#once a schedule is created, the student would be removed from the current_index. 
 
 <p><h3>Hello, Tutors! Below, you'll find a list of students needing help.</br>
 If you can help them, please hit the SCHEDULE LESSON button next to their name, and </br>
@@ -14,4 +15,6 @@ fill out the necessary info to schedule a time to meet. Thanks!</h3></p>
     <%= link_to "Schedule Lesson", new_lesson_path(s) %>
     </li>
     </ul>
-    <% end %>
+<% end %>
+
+Return to my home page: <%= link_to "#{@tutor.first_name}'s Page", tutor_path(@tutor %>)
