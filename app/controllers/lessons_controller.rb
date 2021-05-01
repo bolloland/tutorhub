@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
     end
 
     def new 
+        current_user
     end
 
     def create 
