@@ -5,3 +5,18 @@ tutoring </br>
 <%= @student.first_name %> <%= @student.last_name %></br>
 
 <%= form_with @lesson do |f| %>
+
+    <%= f.label "Location" %>
+    <%= f.text_field :location %></br>
+    <%= f.label "address_1" %>
+    <%= f.text_field :address_1 %></br>    
+    <%= f.label "address_2" %>
+    <%= f.text_field :address_2 %></br>
+    <%= f.label "meeting_time" %>
+    <%= f.text_field :meeting_time %></br>
+    <%= f.label :subject, "Subject:" %>
+    <%= f.select :subject, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br> 
+    <%= f.label :topic, "Main Topic:" %>
+    <%= f.text_field :topic %></br>
+
+<% end %>
