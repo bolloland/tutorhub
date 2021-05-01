@@ -2,11 +2,11 @@ class SessionsController < ApplicationController
   
 
   def tutor_new #tutor-Login form rendered
-    @tutor = Tutor.find_by(username: params[:session][:username])
+    @tutor = Tutor.new
   end
 
   def student_new
-    @student = Student.find_by(username: params[:session][:username])
+    @student = Student.new
   end
 
   def tutor_create #attach the sessions to the user

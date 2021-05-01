@@ -12,9 +12,8 @@ fill out the necessary info to schedule a time to meet. Thanks!</h3></p>
     <li><%= s.first_name %> <%= s.last_name[0] %>.
     is in <%= s.grade %>th grade, and needs help in <%= s.subject_help %>,
     specifically: "<%= s.student_bio %></br>
-    <%= link_to "Schedule Lesson", new_lesson_path(s) %>
+    <%= link_to "Schedule Lesson", new_tutor_lesson_path(s) %>
     </li>
     </ul>
 <% end %>
 
-Return to my home page: <%= link_to "#{@tutor.first_name}'s Page", tutor_path(@tutor %>)

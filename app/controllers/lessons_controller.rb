@@ -6,7 +6,7 @@ class LessonsController < ApplicationController
     end
 
     def new 
-        current_user
+     binding.pry   
     end
 
     def create 
