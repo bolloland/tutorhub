@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-    private
     
     def current_user  
         if Tutor.find_by(id: session[:tutor_id])
@@ -15,3 +14,4 @@ class ApplicationController < ActionController::Base
     end
 
 end
+ 
