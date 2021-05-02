@@ -1,18 +1,17 @@
 <h1>Student#show</h1>
 
-#Student should only be able to EDIT their page
+#Student should only be able to EDIT their page</br>
 
+STUDENT INFO:</br>
+
+<% if @current_user.class == Student %>
 <h3>Hi <%= @student.first_name %>!</h3></br>
-
-STUDENT INFO:
-
 This is your page. From here you can:</br>
-<% if @current_user.username == @student.username %>
     <%= link_to '- edit your personal information', edit_student_path(@student) %> </br>
     <%= link_to '- find a tutor', tutors_path %></br>
-<% end %>
 - view your calendar of upcoming lessons</br>
 (students/:student_id/lessons/:lesson_id?</br>
 - delete your account (but why would you want to!?)</br>
+<% end %>
 
 <%= link_to "Schedule Lesson", new_tutor_student_lesson_path(@tutor.id, @student.id) %>

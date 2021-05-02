@@ -18,7 +18,6 @@ class SessionsController < ApplicationController
       else
         render "tutor_new"
       end
-      current_user
   end
 
   def student_create #attach the sessions to the user
