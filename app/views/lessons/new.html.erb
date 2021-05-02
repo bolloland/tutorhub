@@ -14,8 +14,8 @@ tutoring </br>
     <%= f.text_field :address_1 %></br>    
     <%= f.label "address_2" %>
     <%= f.text_field :address_2 %></br>
-    <%= f.label "meeting_time" %>
-    <%= f.text_field :meeting_time %></br>
+    <%= f.label :meeting_time, "Meeting_Time" %>
+    <%= f.datetime_field :meeting_time %></br>
     <%= f.label :subject, "Subject:" %>
     <%= f.select :subject, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br> 
     <%= f.label :topic, "Main Topic:" %>

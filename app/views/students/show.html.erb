@@ -1,8 +1,10 @@
 <h1>Student#show</h1>
 
-#Student should only be able to see their page
+#Student should only be able to EDIT their page
 
 <h3>Hi <%= @student.first_name %>!</h3></br>
+
+STUDENT INFO:
 
 This is your page. From here you can:</br>
 <% if @current_user.username == @student.username %>

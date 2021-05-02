@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
     def show
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:id])
+                
     end
     
     def create 

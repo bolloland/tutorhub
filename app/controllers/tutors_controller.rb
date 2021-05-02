@@ -4,6 +4,8 @@ before_action :current_user
 
     def index
         @tutors = Tutor.all
+        @student = Student.find_by_id(params[:student_id])
+
     end
    
     def new 
