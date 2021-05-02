@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     @tutor = Tutor.find_by(username: params[:session][:username])
       if @tutor && @tutor.authenticate(params[:session][:password])
         session[:tutor_id] = @tutor.id 
-        current_user
+        current_tutor
         redirect_to tutor_path(@tutor)
       else
         render "tutor_new"
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     @student = Student.find_by(username: params[:session][:username])
       if @student && @student.authenticate(params[:session][:password])
         session[:student_id] = @student.id 
-        current_user
+        current_student
         redirect_to student_path(@student)
       else
         render "student_new"

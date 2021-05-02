@@ -8,10 +8,9 @@ next to their name, and fill out the necessary info to schedule a time to meet. 
 
 <% @tutors.each do |t| %>
     <ul>
-    <li><%= t.first_name %> <%= t.last_name %>
+    <li> <%= link_to "#{t.first_name} #{t.last_name}", student_tutor_path(@student.id, t.id) %>
     has taught/tutored <%= t.subject_taught %> for <%= t.years_exp %> years</br>
-    Bio: <%= t.tutor_bio %>
-    <%= link_to "Schedule Lesson", new_lesson_path(t) %>
+ 
     </li>
     </ul>
     <% end %>

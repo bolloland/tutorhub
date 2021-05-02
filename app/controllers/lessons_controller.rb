@@ -17,7 +17,6 @@ class LessonsController < ApplicationController
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
         @lesson = Lesson.new
-        # binding.pry
     end
 
     def create 
@@ -58,11 +57,11 @@ class LessonsController < ApplicationController
     private
 
     def get_lesson
-L     @lesson = Lesson.find_by_id(params[:id])
-L end
+        @lesson = Lesson.find_by_id(params[:id])
+    end
 
     def lesson_params
-        params.require(:lesson).permit(:tutor_id, :student_id, :location, :address_1, :address_2, :meeting_time, :subject, :topic)
+        params.require(:lesson).permit(:tutor_id, :student_id, :location, :address_1, :address_2, :meeting_time, :subject, :topic, student: [:id, :last_name, :first_name], tutor: [:id, :first_name, :last_name])
     end
     
 end

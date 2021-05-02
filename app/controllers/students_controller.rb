@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
     # before_action :get_student, only: [:show, :edit, :update, :delete]
-    before_action :current_user
+    before_action :current_student, except: [:new, :create]
 
     def index
         @tutor = Tutor.find_by_id(params[:tutor_id])
@@ -14,12 +14,14 @@ class StudentsController < ApplicationController
     def show
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:id])
-        #binding.pry     
+
     end
     
     def create 
         @student = Student.new(student_params)
             if @student.save
+                session[:student_id] = @student.id 
+                @current_user = current_student
                 redirect_to student_path(@student)
             else
                 render :new 
