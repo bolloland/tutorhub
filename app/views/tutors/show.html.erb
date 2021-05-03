@@ -1,6 +1,6 @@
 <h1>Tutor#show</h1>
 TUTOR INFORMATION:</br>
-
+<%= @tutor.first_name %> <%= @tutor.last_name %>
 Tutor Bio: <%= @tutor.tutor_bio %></br>
 
 <% if @current_user.class == Tutor %>
