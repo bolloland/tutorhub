@@ -9,6 +9,29 @@ class SessionsController < ApplicationController
     @student = Student.new
   end
 
+  def tutor_omniauth
+   
+    @tutor = Tutor.from_omniauth(request.env['omniauth.auth'])
+      if @tutor.valid?
+        session[:tutor_id] = @tutor.id
+        current_tutor
+        redirect_to tutor_path(@tutor)
+      else
+        render new_tutor_path
+      end
+  end  
+    
+  # def student_omniauth
+  #   @student = Student.from_omniauth(request.env['omniauth.auth'])
+  #   if @student.valid?
+  #     session[:student_id] = student.id
+  #     current_student
+  #     redirect_to student_path(@student)
+  #   else
+  #     render "student_new"
+  #   end
+  # end
+
   def tutor_create #attach the sessions to the user
     @tutor = Tutor.find_by(username: params[:session][:username])
       if @tutor && @tutor.authenticate(params[:session][:password])
