@@ -4,7 +4,19 @@ class StudentsController < ApplicationController
 
     def index
         @tutor = Tutor.find_by_id(params[:tutor_id])
-        @students = Student.all
+        @students = Student.all.order_by_grade
+    end
+
+    def index_by_subject
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @students = Student.all.alpha_by_subject
+        render :index
+    end
+
+    def index_by_grade
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @students = Student.all.order_by_grade
+        render :index
     end
    
     def new 
@@ -14,6 +26,7 @@ class StudentsController < ApplicationController
     def show
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:id])
+       
 
     end
     
@@ -59,7 +72,7 @@ class StudentsController < ApplicationController
     end
 
     def student_params
-    params.require(:student).permit(:id, :first_name, :last_name, :email, :username, :password, :grade, :subject_help, :student_bio)
+    params.require(:student).permit(:id, :first_name, :last_name, :email, :username, :password, :grade, :subject_help, :student_bio, :alpha_by_subject, :order_by_grade)
     end
     
 end
