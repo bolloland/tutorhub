@@ -36,15 +36,18 @@ class LessonsController < ApplicationController
     end
 
     def edit 
+        
         @lesson = Lesson.find_by_id(params[:id])
     end
 
     def update 
+        @tutor = Tutor.find_by_id(params[:lesson][:tutor_id])
+        @student = Student.find_by_id(params[:lesson][:student_id])
         @lesson = Lesson.find_by_id(params[:id])
         if @lesson.update(lesson_params)
             redirect_to lesson_path(@lesson)
         else
-            render :edit
+            render :edit_tutor_student_lesson_path
         end
     end
 
