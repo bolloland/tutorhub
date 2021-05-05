@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   resources :tutors
   resources :lessons
 
+
+  get 'auth/:provider/callback' => 'sessions#tutor_omniauth'
+  # get 'auth/:provider/callback' => 'sessions#student_omniauth'
+
   get 'tutor_login', to: 'sessions#tutor_new' 
   post 'tutor_login', to: 'sessions#tutor_create' 
   get 'tutor_logout', to: 'sessions#tutor_destroy'

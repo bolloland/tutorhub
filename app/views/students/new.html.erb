@@ -1,5 +1,8 @@
 <h1>Student#new</h1>
 
+Create an account using your Google account:</br>
+<%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+(after creating redirect to #edit to complete missing fields)
 <% if @student.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -33,6 +36,3 @@
   
     <%= f.submit "Create Student Account" %>
 <% end %>
-
-or create an account using Google or Github:
-(after creating redirect to #edit to complete missing fields)

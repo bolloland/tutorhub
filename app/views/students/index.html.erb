@@ -1,20 +1,15 @@
-<h1>Student#index</h1>
-#once a schedule is created, the student would be removed from the current_index. 
+</br><i>Student#index</i>
 
-<p><h3>Hello, Tutors! Below, you'll find a list of students needing help.</br>
-If you can help them, please hit the SCHEDULE LESSON button next to their name, and </br>
-fill out the necessary info to schedule a time to meet. Thanks!</h3></p>
+<h5>Hello, Tutors! Below, you'll find a list of students needing help.</br>
+If you are qualified in that subject and grade, click on a student's name for more detail. </br></h5>
 
-<h2>STUDENTS:</h2>
+<h4>STUDENTS:</h4>
+
 
 <% @students.each do |s| %>
     <ul>
-   
     <li> <%= link_to "#{s.first_name} #{s.last_name[0]}", tutor_student_path(@tutor.id, s.id) %>
-    
-    is in <%= s.grade %>th grade, and needs help in <%= s.subject_help %>,
-    specifically: "<%= s.student_bio %></br>
-    
+    is in <%= s.grade %>th grade, and needs help in <%= s.subject_help %>.
     </li>
     </ul>
 <% end %>

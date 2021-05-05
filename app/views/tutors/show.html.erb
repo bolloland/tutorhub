@@ -1,10 +1,26 @@
-<h1>Tutor#show</h1>
+<i>Tutor#show</i></br>
 TUTOR INFORMATION:</br>
-<%= @tutor.first_name %> <%= @tutor.last_name %>
-Tutor Bio: <%= @tutor.tutor_bio %></br>
+<%= @tutor.first_name %> <%= @tutor.last_name %></br>
+Has been teaching:
+<% if @tutor.subject_taught %> 
+    <%= @tutor.subject_taught %>
+<% else %>
+    <i>"please enter subject" </i>
+<% end %>   for:
+<% if @tutor.years_exp %> 
+    <%= @tutor.years_exp %>
+<% else %>
+<i>"please enter years of experience"</i>
+<% end  %> years</br>
+Tutor Bio: 
+<% if !@tutor.tutor_bio.blank? %> 
+    <%= @tutor.tutor_bio %>
+<% else %>
+<i>"please include classes and grades you have taught"</i>
+<% end  %></br>
 
 <% if @current_user.class == Tutor %>
-    <h3>Hi <%= @tutor.first_name %>!</h3></br>
+    <h2>Hi <%= @tutor.first_name %>!</h2>
     This is your page. From here you can:</br>
     <%= link_to '- EDIT your personal information', edit_tutor_path(@tutor) %> </br>
     <%= link_to '- FIND A STUDENT', tutor_students_path(@tutor) %></br>
