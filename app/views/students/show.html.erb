@@ -1,6 +1,10 @@
 <h1>Student#show</h1>
 
 STUDENT INFO:</br>
+<p>Name: <%= @student.first_name %> <%= @student.last_name %></br>
+Grade: <%= @student.grade %></br>
+Needs help in: <%= @student.subject_help %></br>
+Specifically: <%= @student.student_bio %></br></p>
 
 <% if current_user.class == Student %>
 <h3>Hi <%= @student.first_name %>!</h3></br>
