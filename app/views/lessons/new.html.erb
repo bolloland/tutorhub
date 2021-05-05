@@ -1,20 +1,20 @@
 <h1>Lesson#new</h1>
 
-<%= @tutor.first_name %> <%= @tutor.last_name %></br>
-tutoring </br>
-<%= @student.first_name %> <%= @student.last_name %></br>
+<strong><%= @tutor.first_name %> <%= @tutor.last_name %></strong> tutoring
+<strong><%= @student.first_name %> <%= @student.last_name %></strong>
+at: </br></br>
 
 <%= form_with model: @lesson do |f| %>
 
     <%= f.hidden_field(:tutor_id, :value => @tutor.id) %>
     <%= f.hidden_field(:student_id, :value => @student.id) %>
-    <%= f.label "Location" %>
+    <%= f.label "Location:" %>
     <%= f.text_field :location %></br>
-    <%= f.label "address_1" %>
+    <%= f.label "address_Line_1:" %>
     <%= f.text_field :address_1 %></br>    
-    <%= f.label "address_2" %>
+    <%= f.label "address_Line_2:" %>
     <%= f.text_field :address_2 %></br>
-    <%= f.label :meeting_time, "Meeting_Time" %>
+    <%= f.label :meeting_time, "Meeting_Time:" %>
     <%= f.datetime_field :meeting_time %></br>
     <%= f.label :subject, "Subject:" %>
     <%= f.select :subject, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br> 

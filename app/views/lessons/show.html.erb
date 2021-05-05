@@ -1,9 +1,10 @@
 <h1>Lesson#show</h1>
 
-Hi <%= @student.first_name %>!</br>
+Hi <%= @tutor.first_name %>!</br>
 
-This is your page. From here you can:</br>
-<%= link_to "- edit your personal information", edit_student_path(@student) %> </br>
-- find a tutor</br>
+This is your scheduled lesson with <%= @student.first_name %> <%= @student.last_name[0] %>.:</br>
+<%= link_to "Edit This Lesson", edit_tutor_student_lesson_path(@tutor.id, @student.id) %> </br>
+<%= link_to "Delete This Lesson", edit_tutor_student_lesson_path(@tutor.id, @student.id) %> </br>
+
 - view your calendar of upcoming lessons</br>
 - delete your account (but why would you want to!?)</br>
