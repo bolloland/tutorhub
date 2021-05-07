@@ -4,6 +4,7 @@ class LessonsController < ApplicationController
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
         @lessons = Lesson.all
+        binding.pry
     end
 
     def show
@@ -36,8 +37,11 @@ class LessonsController < ApplicationController
     end
 
     def edit 
-        
+        # binding.pry
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @student = Student.find_by_id(params[:student_id])
         @lesson = Lesson.find_by_id(params[:id])
+        # binding.pry
     end
 
     def update 
@@ -45,7 +49,7 @@ class LessonsController < ApplicationController
         @student = Student.find_by_id(params[:lesson][:student_id])
         @lesson = Lesson.find_by_id(params[:id])
         if @lesson.update(lesson_params)
-            redirect_to lesson_path(@lesson)
+            redirect_to tutor_student_lesson_path(@tutor, @student, @lesson)
         else
             render :edit_tutor_student_lesson_path
         end
