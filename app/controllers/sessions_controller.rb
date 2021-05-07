@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
         current_tutor
         redirect_to tutor_path(@tutor)
       else
-        render "tutor_new"
+        redirect_to new_tutor_path      
       end
   end
 
