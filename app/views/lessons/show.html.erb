@@ -12,4 +12,5 @@ You have scheduled a lesson with <%= @student.first_name %> <%= @student.last_na
 <%= link_to "Edit This Lesson", edit_tutor_student_lesson_path(@tutor.id, @student.id) %> </br>
 <%= link_to "Delete This Lesson", edit_tutor_student_lesson_path(@tutor.id, @student.id), method: :delete, data:{Confirm: "Are you sure you want to delete this lesson?"} %> </br>
 </br>
-<%= link_to "View all your upcoming lessons", tutor_student_lessons_path(@tutor, @student) %></br>
+<!-- <%= link_to "View all your upcoming lessons", tutor_student_lessons_path(@tutor, @student) %></br> -->
+<%= button_to "- VIEW YOUR UPCOMING LESSONS", tutor_lessons_path(@tutor_id, @student_id, @lessons), method: :get %></br>
