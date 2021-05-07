@@ -4,7 +4,7 @@ class LessonsController < ApplicationController
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
         @lessons = Lesson.all
-        binding.pry
+        
     end
 
     def show
@@ -12,6 +12,13 @@ class LessonsController < ApplicationController
         @student = Student.find_by_id(params[:student_id])
         @lesson = Lesson.find_by_id(params[:id])
        
+    end
+
+    def tutor_lessons
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @student = Student.find_by_id(params[:student_id])
+        @lessons = Lesson.all
+        # binding.pry
     end
 
     def new 
