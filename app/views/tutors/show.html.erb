@@ -1,7 +1,7 @@
 <i>Tutor#show</i></br>
-TUTOR INFORMATION:</br>
+<p>TUTOR INFORMATION:</br>
 <%= @tutor.first_name %> <%= @tutor.last_name %></br>
-Has been teaching:
+Has been teaching
 <% if @tutor.subject_taught %> 
     <%= @tutor.subject_taught %>
 <% else %>
@@ -17,16 +17,16 @@ Tutor Bio:
     <%= @tutor.tutor_bio %>
 <% else %>
 <i>"please include classes and grades you have taught"</i>
-<% end  %></br>
+<% end  %></p>
 
 <% if @current_user.class == Tutor %>
     <h2>Hi <%= @tutor.first_name %>!</h2>
     This is your page. From here you can:</br>
-    <%= link_to '- EDIT your personal information', edit_tutor_path(@tutor) %> </br>
-    <%= link_to '- FIND A STUDENT', tutor_students_path(@tutor) %></br>
-    - view your calendar of upcoming lessons
-    (tutors/:tutor_id/lessons/:lesson_id?</br>
-    - delete your account (but why would you want to!?)</br>
+    <%= button_to '- EDIT YOUR TUTOR PROFILE', edit_tutor_path(@tutor), method: :get %> </br>
+    <%= button_to '- FIND A STUDENT', tutor_students_path(@tutor), method: :get %></br>
+    <%= link_to "- VIEW YOUR UPCOMING LESSONS", lessons_path(@tutor, @students) %></br>
+    <%= button_to "- DELETE YOUR PROFILE", tutor_path(@tutor.id), method: :delete, data:{Confirm: "Are you sure you want to delete your account?"} %> </br>
+</br>
 <% elsif @current_user.class == @current_student.class %>
     <%= link_to "Schedule Lesson With This Tutor", new_student_tutor_lesson_path(@student.id, @tutor) %>
 <% else %> 
