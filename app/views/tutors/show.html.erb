@@ -24,11 +24,11 @@ Tutor Bio:
     This is your page. From here you can:</br>
     <%= button_to '- EDIT YOUR TUTOR PROFILE', edit_tutor_path(@tutor), method: :get %> </br>
     <%= button_to '- FIND A STUDENT', tutor_students_path(@tutor), method: :get %></br>
-    <%= link_to "- VIEW YOUR UPCOMING LESSONS", lessons_path(@tutor, @students) %></br>
+    <%= button_to "- VIEW YOUR UPCOMING LESSONS", tutor_lessons_path(@tutor_id, @student_id, @lessons), method: :get %></br>
     <%= button_to "- DELETE YOUR PROFILE", tutor_path(@tutor.id), method: :delete, data:{Confirm: "Are you sure you want to delete your account?"} %> </br>
 </br>
 <% elsif @current_user.class == @current_student.class %>
-    <%= link_to "Schedule Lesson With This Tutor", new_student_tutor_lesson_path(@student.id, @tutor) %>
+    <%= link_to "Schedule Lesson With This Tutor", new_student_tutor_lesson_path(:student_id, @tutor) %>
 <% else %> 
     Can't Find the User!
 <% end %>
