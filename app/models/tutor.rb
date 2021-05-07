@@ -5,6 +5,7 @@ class Tutor < ApplicationRecord
 
   validates :first_name, :last_name, :email, :username, presence: true 
   validates :email, :username, uniqueness: true 
+  validates :password, length: {minimum: 7}, allow_nil: true
 
   scope :alpha_by_subject, -> { student.order(subject_help: :asc) }
 

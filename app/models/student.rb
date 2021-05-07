@@ -5,6 +5,7 @@ class Student < ApplicationRecord
 
   validates :first_name, :last_name, :email, :username, presence: true 
   validates :email, :username, uniqueness: true 
+ 
 
   scope :alpha_by_subject, -> {order('subject_help')}
   scope :order_by_grade, -> {order('grade')}
