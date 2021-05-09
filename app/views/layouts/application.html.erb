@@ -11,8 +11,12 @@
   </head>
 
   <body>
-  <%= link_to "View Students", students_path %> - <%= link_to "View Tutors", tutors_path %> - 
-  <%= link_to "Logout", @current_user.class == Tutor ? tutor_logout_path : student_logout_path %>
+  <% if current_user %>
+  <%= button_to "Logout", @current_user.class == Tutor ? tutor_logout_path : student_logout_path, method: :get %>
+  <%= button_to "My Schedule", @current_user.class == Tutor ? tutor_lessons_path : student_lessons_path, method: :get %>
+  <%= button_to "My Page", current_user.class == Tutor ? tutor_path(current_user.id) : student_path(current_user.id) , method: :get %>
+  <% end %>
+
     <%= yield %>
   </body>
 </html>

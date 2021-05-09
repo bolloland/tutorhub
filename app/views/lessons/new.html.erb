@@ -1,26 +1,19 @@
-<h1>Lesson#new</h1>
+</br><i>Lesson#new</i></br>
 
-<%= @tutor.first_name %> <%= @tutor.last_name %></br>
-tutoring </br>
-<%= @student.first_name %> <%= @student.last_name %></br>
+<strong><%= @tutor.first_name %> <%= @tutor.last_name %></strong> tutoring
+<strong><%= @student.first_name %> <%= @student.last_name %></strong>
+at: </br></br>
 
 <%= form_with model: @lesson do |f| %>
 
-    <%= f.hidden_field(:tutor_id, :value => @tutor.id) %>
-    <%= f.hidden_field(:student_id, :value => @student.id) %>
-    <%= f.label "Location" %>
-    <%= f.text_field :location %></br>
-    <%= f.label "address_1" %>
-    <%= f.text_field :address_1 %></br>    
-    <%= f.label "address_2" %>
-    <%= f.text_field :address_2 %></br>
-    <%= f.label :meeting_time, "Meeting_Time" %>
-    <%= f.datetime_field :meeting_time %></br>
-    <%= f.label :subject, "Subject:" %>
-    <%= f.select :subject, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br> 
-    <%= f.label :topic, "Main Topic:" %>
-    <%= f.text_field :topic %></br>
+    <%= render partial: "lesson_form", locals: {lf: f} %> 
 
-    <%= f.submit %>
+    <%= f.submit "CREATE LESSON" %>
 
+<% end %>
+~or~
+<% if current_user.class == Student %>
+<%= button_to 'FIND A DIFFERENT TUTOR', student_tutors_path(@student), method: :get %></br> 
+<% else %>
+<%= button_to 'FIND A STUDENT', tutor_students_path(@tutor), method: :get %></br> 
 <% end %>

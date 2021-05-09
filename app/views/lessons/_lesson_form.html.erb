@@ -1,0 +1,14 @@
+    <%= lf.hidden_field(:tutor_id, :value => @tutor.id) %>
+    <%= lf.hidden_field(:student_id, :value => @student.id) %>
+    <%= lf.label "Location:" %>
+    <%= lf.text_field :location %></br>
+    <%= lf.label "address_Line_1:" %>
+    <%= lf.text_field :address_1 %></br>    
+    <%= lf.label "address_Line_2:" %>
+    <%= lf.text_field :address_2 %></br>
+    <%= lf.label :meeting_time, "Meeting_Time:" %>
+    <%= lf.datetime_field :meeting_time %></br>
+    <%= lf.label :subject, "Subject:" %>
+    <%= lf.select :subject, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br> 
+    <%= lf.label :topic, "Main Topic:" %>
+    <%= lf.text_field :topic %></br>

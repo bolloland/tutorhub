@@ -1,15 +1,15 @@
-<h1>Tutor#index</h1>
+</br><i>Tutor#index</i>
 
-<p><h3>Hello, Scholars! Below, you'll find a list of tutors offering their help.</br>
-If their area of expertise matches the help you need, please hit the SCHEDULE LESSON button </br>
-next to their name, and fill out the necessary info to schedule a time to meet. Thanks!</h3></p>
+<p><h4>Hello, Scholars! Below, you'll find a list of tutors offering their help.</br>
+If their area of expertise matches the help you need, click on their name for more details. </br>
+Tutors are sorted by area of expertise.</h4></p>
 
-<h2>AVAILABLE TUTORS:</h2>
+<strong>AVAILABLE TUTORS:</strong>
 
 <% @tutors.each do |t| %>
     <ul>
     <li> <%= link_to "#{t.first_name} #{t.last_name}", student_tutor_path(@student.id, t.id) %>
-    has taught/tutored <%= t.subject_taught %> for <%= t.years_exp %> years</br>
+    has taught/tutored <strong><%= t.subject_taught %></strong> for <strong><%= t.years_exp %></strong> </br>
  
     </li>
     </ul>

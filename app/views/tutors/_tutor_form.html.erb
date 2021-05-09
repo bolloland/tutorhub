@@ -1,0 +1,10 @@
+    <%= in_partial.label :first_name, "First Name:" %>
+    <%= in_partial.text_field :first_name %></br>
+    <%= in_partial.label :last_name, "Last Name:" %>
+    <%= in_partial.text_field :last_name %></br>
+    <%= in_partial.label :years_exp, "Years of Experience:" %>
+    <%= in_partial.select :years_exp, ["1 to 2 years", "3 to 5 years", "6 to 9 years", "10 to 15 years", "over 15 years"] %></br>
+    <%= in_partial.label :subject_taught, "Subject Taught:" %>
+    <%= in_partial.select :subject_taught, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Language", "Computer Science", "Other"] %></br>
+    <%= in_partial.label :tutor_bio, "Biography (please give some additional background to share with your students, including courses you have taught and their respective grade level:" %></br>
+    <%= in_partial.text_area :tutor_bio, size: "60x7"%></br>

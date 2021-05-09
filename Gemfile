@@ -36,6 +36,9 @@ group :development, :test do
   gem 'rest-client'
   gem 'json'
   gem 'dotenv-rails'
+  gem 'omniauth'
+  gem 'omniauth-google-oauth2'
+  gem 'omniauth-rails_csrf_protection'
 end
 
 group :development do

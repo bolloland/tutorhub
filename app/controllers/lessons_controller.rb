@@ -3,7 +3,8 @@ class LessonsController < ApplicationController
     def index
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
-        @lessons = Lesson.all
+        @lessons = Lesson.all 
+        
     end
 
     def show
@@ -13,10 +14,25 @@ class LessonsController < ApplicationController
        
     end
 
+    def tutor_lessons
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @student = Student.find_by_id(params[:student_id])
+        @lessons = Lesson.order_by_date
+        # binding.pry
+    end
+
+    def student_lessons
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @student = Student.find_by_id(params[:student_id])
+        @lessons = Lesson.all.order_by_date
+        # binding.pry
+    end
+
     def new 
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
         @lesson = Lesson.new
+        # binding.pry
     end
 
     def create 
@@ -36,15 +52,21 @@ class LessonsController < ApplicationController
     end
 
     def edit 
+        # binding.pry
+        @tutor = Tutor.find_by_id(params[:tutor_id])
+        @student = Student.find_by_id(params[:student_id])
         @lesson = Lesson.find_by_id(params[:id])
+        # binding.pry
     end
 
     def update 
+        @tutor = Tutor.find_by_id(params[:lesson][:tutor_id])
+        @student = Student.find_by_id(params[:lesson][:student_id])
         @lesson = Lesson.find_by_id(params[:id])
         if @lesson.update(lesson_params)
-            redirect_to lesson_path(@lesson)
+            redirect_to tutor_student_lesson_path(@tutor, @student, @lesson)
         else
-            render :edit
+            render :edit_tutor_student_lesson_path
         end
     end
 

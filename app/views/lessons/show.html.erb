@@ -1,9 +1,20 @@
-<h1>Lesson#show</h1>
+<i>Lesson#show</i></p>
 
-Hi <%= @student.first_name %>!</br>
+Hi <%= @tutor.first_name %>!</br>
 
-This is your page. From here you can:</br>
-<%= link_to "- edit your personal information", edit_student_path(@student) %> </br>
-- find a tutor</br>
-- view your calendar of upcoming lessons</br>
-- delete your account (but why would you want to!?)</br>
+You have scheduled a lesson with <%= @student.first_name %> <%= @student.last_name[0] %>. {<%= mail_to @student.email %>}:</br>
+<p>Location: </br>
+<%= @lesson.location %></br>
+<%= @lesson.address_1 %></br>
+<%= @lesson.address_2 %></br>
+::<b><%= @lesson.meeting_time.strftime("%A %B %-d, %Y @ %I:%M %p") %>::</b></p>
+
+<%= link_to "Edit This Lesson", edit_tutor_student_lesson_path(@tutor.id, @student.id) %> </br>
+<%= link_to "Delete This Lesson", edit_tutor_student_lesson_path(@tutor.id, @student.id), method: :delete, data:{Confirm: "Are you sure you want to delete this lesson?"} %> </br>
+</br>
+<!-- <%= link_to "View all your upcoming lessons", tutor_student_lessons_path(@tutor, @student) %></br> -->
+<% if current_user.class == Tutor %>
+  <%= button_to "VIEW YOUR UPCOMING LESSONS", tutor_lessons_path(@tutor_id, @student_id, @lessons), method: :get %></br>
+<% else %>
+  <%= button_to "VIEW YOUR UPCOMING LESSONS", student_lessons_path(@student_id, @tutor_id, @lessons), method: :get %></br>
+<% end %>
