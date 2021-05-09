@@ -3,35 +3,17 @@
 Create an account using your Google account:</br>
 <%= button_to "Create a NEW TutorHub account with Google", '/auth/google_oauth2'  %>
 
-<% if @tutor.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
-
-    <ul>
-      <% @tutor.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render 'error_msg' %>
 
 <%= form_with model: @tutor do |f| %>
-    <%= f.label :first_name, "First Name:" %>
-    <%= f.text_field :first_name %></br>
-    <%= f.label :last_name, "Last Name:" %>
-    <%= f.text_field :last_name %></br>
     <%= f.label "email:" %>
     <%= f.email_field :email %></br>
     <%= f.label "username:" %>
     <%= f.text_field :username %></br>
     <%= f.label "password:" %>
     <%= f.password_field :password %></br>
-    <%= f.label :years_exp, "Years of Experience:" %>
-    <%= f.select :years_exp, ["1 to 2 years", "3 to 5 years", "6 to 9 years", "10 to 15 years", "over 15 years"] %></br>
-    <%= f.label :subject_taught, "Subject Taught:" %>
-    <%= f.select :subject_taught, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Language", "Computer Science", "Other"] %></br>
-    <%= f.label :tutor_bio, "Biography (please give some additional background to share with your students, including courses you have taught and their respective grade level:" %></br>
-    <%= f.text_area :tutor_bio, size: "60x7"%></br>
+
+    <%= render partial: "tutor_form", locals: {in_partial: f} %> 
 
     <%= f.submit "Create Tutor Account" %>
-    <% end %>
+<% end %>
