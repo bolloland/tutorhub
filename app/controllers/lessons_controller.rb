@@ -24,7 +24,7 @@ class LessonsController < ApplicationController
     def student_lessons
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
-        @lessons = Lesson.order_by_date
+        @lessons = Lesson.all.order_by_date
         # binding.pry
     end
 
@@ -32,6 +32,7 @@ class LessonsController < ApplicationController
         @tutor = Tutor.find_by_id(params[:tutor_id])
         @student = Student.find_by_id(params[:student_id])
         @lesson = Lesson.new
+        # binding.pry
     end
 
     def create 
