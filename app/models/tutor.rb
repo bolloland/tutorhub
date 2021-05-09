@@ -7,7 +7,9 @@ class Tutor < ApplicationRecord
   validates :email, :username, uniqueness: true 
   validates :password, length: {minimum: 7}, allow_nil: true
 
-  scope :alpha_by_subject, -> { student.order(subject_help: :asc) }
+  scope :alpha_by_subject_taught, -> {order('subject_taught')}
+  scope :order_by_years_exp, -> {order('years_exp')}
+
 
   def self.from_omniauth(response)
     

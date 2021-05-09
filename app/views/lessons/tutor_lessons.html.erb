@@ -1,4 +1,4 @@
-<i>Lesson#tutor_lessons</i>
+</br><i>Lesson#tutor_lessons</i>
 
 <h4>Lesson Schedule for <%= link_to "#{@current_user.first_name} #{@current_user.last_name}", tutor_path(@current_user.id) %>:</h4>
 
@@ -6,7 +6,7 @@
     
     <% if @current_user.id == les.tutor_id %>
     <ul>
-    <li><b><%= link_to "#{Student.find_by_id(les.student_id).first_name} #{Student.find_by_id(les.student_id).last_name[0]}.", tutor_student_path(:tutor_id, :student_id) %> :: 
+    <li><b><%= link_to "#{Student.find_by_id(les.student_id).first_name} #{Student.find_by_id(les.student_id).last_name[0]}.", tutor_student_path(les.tutor_id, les.student_id) %> :: 
         <%= Student.find_by_id(les.student_id).grade %>th grade </b>, needs help in <b><%= Student.find_by_id(les.student_id).subject_help %></b>.</br>
    
         <p><i>Location: </i></br>

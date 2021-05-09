@@ -1,4 +1,4 @@
-<h1>Lesson#new</h1>
+</br><i>Lesson#new</i></br>
 
 <strong><%= @tutor.first_name %> <%= @tutor.last_name %></strong> tutoring
 <strong><%= @student.first_name %> <%= @student.last_name %></strong>
@@ -21,6 +21,12 @@ at: </br></br>
     <%= f.label :topic, "Main Topic:" %>
     <%= f.text_field :topic %></br>
 
-    <%= f.submit %>
+    <%= f.submit "CREATE LESSON" %>
 
+<% end %>
+~or~
+<% if current_user.class == Student %>
+<%= button_to 'FIND A DIFFERENT TUTOR', student_tutors_path(@student), method: :get %></br> 
+<% else %>
+<%= button_to 'FIND A STUDENT', tutor_students_path(@tutor), method: :get %></br> 
 <% end %>

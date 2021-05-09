@@ -33,7 +33,9 @@ Rails.application.routes.draw do
   post 'student_logout', to: 'sessions#student_destroy'
 
   get 'tutor_lessons', to: 'lessons#tutor_lessons'
-  
+  get 'student_lessons', to: 'lessons#student_lessons'
+
+
   root to: "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
