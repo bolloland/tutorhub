@@ -8,12 +8,9 @@
     <ul>
     <li><b><%= link_to "#{Student.find_by_id(les.student_id).first_name} #{Student.find_by_id(les.student_id).last_name[0]}.", tutor_student_path(les.tutor_id, les.student_id) %> :: 
         <%= Student.find_by_id(les.student_id).grade %>th grade </b>, needs help in <b><%= Student.find_by_id(les.student_id).subject_help %></b>.</br>
-   
-        <p><i>Location: </i></br>
-        <%= les.location %></br>
-        <%= les.address_1 %></br>
-        <%= les.address_2 %></br>
-        ::<b><%= les.meeting_time.strftime("%A %B %-d, %Y @ %I:%M %p") %>::</b></br>
+        
+        <%= render partial: "t_s_lessons_view", locals: {les: les} %> 
+        
         <%= button_to "Edit This Lesson", edit_tutor_student_lesson_path(les.tutor_id, les.student_id, les.id), method: :get %> </br></p>
     </li>
     </ul>

@@ -7,13 +7,10 @@
     <% if @current_user.id == les.student_id %>
     <ul>
     <li><b><%= link_to "#{Tutor.find_by_id(les.tutor_id).first_name} #{Tutor.find_by_id(les.tutor_id).last_name[0]}.", student_tutor_path(les.student_id, les.tutor_id) %> :: 
-        <%= Tutor.find_by_id(les.tutor_id).subject_taught %> Teacher </b>, with <b><%= Tutor.find_by_id(les.tutor_id).years_exp %> experience.</b></br>
-   
-        <p><i>Location: </i></br>
-        <%= les.location %></br>
-        <%= les.address_1 %></br>
-        <%= les.address_2 %></br>
-        ::<b><%= les.meeting_time.strftime("%A %B %-d, %Y @ %I:%M %p") %>::</b></br>
+        <%= Tutor.find_by_id(les.tutor_id).subject_taught %> Teacher </b>, with <b><%= Tutor.find_by_id(les.tutor_id).years_exp %> experience.</b></br>   
+       
+        <%= render partial: "t_s_lessons_view", locals: {les: les} %> 
+       
         <%= button_to "Edit This Lesson", edit_student_tutor_lesson_path(les.student_id, les.tutor_id, les.id), method: :get %> </br></p>
     </li>
     </ul>
