@@ -4,20 +4,7 @@ Please make any changes needed for your lesson with <%= @student.first_name %> <
 
 <%= form_with model: @lesson do |f| %>
 
-    <%= f.hidden_field(:tutor_id, :value => @tutor.id) %>
-    <%= f.hidden_field(:student_id, :value => @student.id) %>
-    <%= f.label "Location:" %>
-    <%= f.text_field :location %></br>
-    <%= f.label "address_Line_1:" %>
-    <%= f.text_field :address_1 %></br>    
-    <%= f.label "address_Line_2:" %>
-    <%= f.text_field :address_2 %></br>
-    <%= f.label :meeting_time, "Meeting_Time:" %>
-    <%= f.datetime_field :meeting_time %></br>
-    <%= f.label :subject, "Subject:" %>
-    <%= f.select :subject, ["English", "Math", "Science", "History", "Arts & Humanities", "Foreign Launguage", "Computer Science", "Other"] %></br> 
-    <%= f.label :topic, "Main Topic:" %>
-    <%= f.text_field :topic %></br>
+    <%= render partial: "lesson_form", locals: {lf: f} %> 
 
     <%= f.submit "Apply Changes" %>
 
