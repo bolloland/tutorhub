@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
       end
   end  
     
+ 
   # def student_omniauth
   #   @student = Student.from_omniauth(request.env['omniauth.auth'])
   #   if @student.valid?
