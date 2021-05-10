@@ -35,6 +35,9 @@ Rails.application.routes.draw do
   get 'tutor_lessons', to: 'lessons#tutor_lessons'
   get 'student_lessons', to: 'lessons#student_lessons'
 
+  get 'invalid_viewer', to: 'students#invalid_viewer'
+  get 'invalid_viewer', to: 'tutors#invalid_viewer'
+
 
   root to: "home#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
