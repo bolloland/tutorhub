@@ -29,7 +29,8 @@ Classes/Grades Taught:
     <%= button_to 'DELETE YOUR PROFILE', tutor_path(@tutor.id), method: :delete, data:{Confirm: "Are you sure you want to delete your account?"} %> </br>
 </br>
 <% elsif @current_user.class == @current_student.class %>
-    <%= link_to "Schedule Lesson With This Tutor", new_student_tutor_lesson_path(@student.id, @tutor) %>
+    <%= button_to "Schedule Lesson With This Tutor", new_student_tutor_lesson_path(@student.id, @tutor.id), method: :get %>
+    <%= button_to "<< FIND A DIFFERENT TUTOR", student_tutors_path, method: :get %>
 <% else %> 
     Can't Find the User!
 <% end %>
