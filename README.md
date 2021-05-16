@@ -18,12 +18,15 @@ To access the app, you'll need third party access through Google.
 Follow these steps:
 
 go to: https://console.developers.google.com/apis
-Left Side Menu : click "Credentials" >
-then at top/middle of the page, in blue, click on "+ Create Credentials" and choose option "OAuth Client ID" >
-APPLICATION TYPE*: Web Application, NAME* : < your name/username >
-you can skip "Authorized JavaScript Origins" and "Authorized redirct URIs" and click on CREATE
+
+- Left Side Menu : click "Credentials" >
+- then at top/middle of the page, in blue, click on "+ Create Credentials" and choose option "OAuth Client ID" >
+- APPLICATION TYPE*: Web Application, NAME* : < your name/username >
+- (you can skip "Authorized JavaScript Origins" and "Authorized redirct URIs")
+- and click on CREATE
 
 "OAuth Client Created" pop-up should appear.
+
 Leave this page open or copy the Client ID and Secret Key and paste them in a file to come back to.
 
 Find a file named .blank_env in the top directory. 
