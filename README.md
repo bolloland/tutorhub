@@ -49,9 +49,11 @@ Bug reports and inquiries are welcome at: [https://github.com/bolloland/tutorhub
 
 # Code of Conduct
 
-[https://github.com/bolloland/tutorhub/.code_of_conduct.md]
+[https://github.com/bolloland/tutorhub/blob/master/.code_of_conduct.md]
 
 # License Information
+
+[https://github.com/bolloland/tutorhub/blob/master/LICENSE]
 
 
 
