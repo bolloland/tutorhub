@@ -1,14 +1,13 @@
 # TUTORHUB
 
-## INSTALL INSTRUCTIONS
-
-Fork and Clone this repo
-`bundle install`
-
 Tutorhub is meant to help students find a tutor, and let tutors schedule lessons with students. 
 Future versions could have uses within a school, professional development within a company, a district's network, or a neighborhood.
 
-Third Party Access
+## INSTALL INSTRUCTIONS
+
+Fork and Clone this repo, 
+
+then `bundle install`
 
 To access the app, you'll need third party access through Google. 
 Follow these steps:
