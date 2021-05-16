@@ -3,29 +3,32 @@
 The TutorHub app is meant to help students find a tutor, and let tutors schedule lessons with students. 
 Future versions could have uses within one school, a district network, or a neighborhood, as long as there is proper oversight involved.
 
+Gem Install and Update
 
+$ bundle install
 
-Configuration
-(Testing)
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Third Party Access
 
-Things you may want to cover:
+To access the app, you'll need third party access through Google. 
+Follow these steps:
 
-* Ruby version
+go to: https://console.developers.google.com/apis
+Left Side Menu : click "Credentials" >
+then at top/middle of the page, in blue, click on "+ Create Credentials" and choose option "OAuth Client ID" >
+APPLICATION TYPE*: Web Application, NAME* : < your name/username >
+you can skip "Authorized JavaScript Origins" and "Authorized redirct URIs" and click on CREATE
 
-* System dependencies
+"OAuth Client Created" pop-up should appear.
+Leave this page open or copy the Client ID and Secret Key and paste them in a file to come back to.
 
-* Configuration
+In your console, git clone this repo.
+Find a file named .blank_env in the top directory. 
+Change the file name to ".env" (right click > Rename)
 
-* Database creation
+open .env
+in .env, list the following:
+GOOGLE_CLIENT_ID = <paste Your Client ID here>
+GOOGLE_SECRET_CLIENT = <paste Your Client Secret here>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+open the Gitignore file, and type ".env" at the bottom of that file)
+your .env file should change color/get darker
