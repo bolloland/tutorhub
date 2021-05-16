@@ -17,7 +17,7 @@ Third Party Access
 To access the app, you'll need third party access through Google. 
 Follow these steps:
 
-go to: https://console.developers.google.com/apis
+go to: [https://console.developers.google.com/apis]
 
 - Left Side Menu : click "Credentials" >
 - then at top/middle of the page, in blue, click on "+ Create Credentials" and choose option "OAuth Client ID" >
@@ -43,7 +43,7 @@ and use localhost:3000 on your browser to navigate the app
 
 # Sample Demo Video:
 
-A brief description of this program's capabilities can be found here: [https://www.loom.com/share/c7198f5330d14183beae992707a538ef?sharedAppSource=personal_library]
+A brief description of this program's capabilities can be found here: [Demo Video](https://www.loom.com/share/c7198f5330d14183beae992707a538ef?sharedAppSource=personal_library)
 
 # Contributor Guide 
 
@@ -51,9 +51,9 @@ Bug reports and inquiries are welcome at: [https://github.com/bolloland/tutorhub
 
 # Code of Conduct
 
-[https://github.com/bolloland/tutorhub/.code_of_conduct.md]
+[Code of Conduct](https://github.com/bolloland/tutorhub/.code_of_conduct.md)
 
 # License Information
 
-[https://github.com/bolloland/tutorhub/blob/master/LICENSE]
+[MIT License](https://github.com/bolloland/tutorhub/blob/master/LICENSE)
 
