@@ -26,14 +26,13 @@ go to: https://console.developers.google.com/apis
 - and click on CREATE
 
 "OAuth Client Created" pop-up should appear.
-
 Leave this page open or copy the Client ID and Secret Key and paste them in a file to come back to.
 
 Find a file named .blank_env in the top directory. 
 Change the file name to ".env" (right click > Rename)
 
-open .env
-in .env, list the following:
+- open .env
+- in .env, list the following:
 GOOGLE_CLIENT_ID = <paste Your Client ID here>
 GOOGLE_SECRET_CLIENT = <paste Your Client Secret here>
 
@@ -56,5 +55,5 @@ Bug reports and inquiries are welcome at: [https://github.com/bolloland/tutorhub
 
 # License Information
 
-
+[https://github.com/bolloland/tutorhub/blob/master/LICENSE]
 
