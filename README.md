@@ -1,6 +1,6 @@
-# TUTORHUB
+## TUTORHUB
 
-INSTALL INSTRUCTIONS
+# INSTALL INSTRUCTIONS
 
 Fork and Clone this repo
 run *bundle install
@@ -38,3 +38,20 @@ open the ".gitignore" file, and type ".env" under the last line of that file
 
 $ rails s 
 and use localhost:3000 on your browser to navigate the app
+
+# Sample Demo Video:
+
+A brief description of this program's capabilities can be found here: [https://www.loom.com/share/c7198f5330d14183beae992707a538ef?sharedAppSource=personal_library]
+
+# Contributor Guide 
+
+Bug reports and inquiries are welcome at: [https://github.com/bolloland/tutorhub]
+
+# Code of Conduct
+
+[https://github.com/bolloland/tutorhub/.code_of_conduct.md]
+
+# License Information
+
+
+
