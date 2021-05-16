@@ -3,14 +3,10 @@
 ## INSTALL INSTRUCTIONS
 
 Fork and Clone this repo
-run *bundle install
+`bundle install`
 
-Tutohub is meant to help students find a tutor, and let tutors schedule lessons with students. 
+Tutorhub is meant to help students find a tutor, and let tutors schedule lessons with students. 
 Future versions could have uses within a school, professional development within a company, a district's network, or a neighborhood.
-
-Gem Install and Update
-
-$ `bundle install`
 
 Third Party Access
 
