@@ -3,6 +3,7 @@ class TutorsController < ApplicationController
 before_action :current_tutor, except: [:new, :create]
 before_action :get_tutor, except: [:index, :new, :create]
 before_action :get_student, only: [:index, :show]
+# before_action :invalid_tutor?, only: [:edit, :show, :delete]
 
     def index
         @tutors = Tutor.all.alpha_by_subject_taught.order_by_years_exp
@@ -14,7 +15,7 @@ before_action :get_student, only: [:index, :show]
     end
 
     def show
-
+ 
     end
 
     def create 
@@ -57,6 +58,13 @@ before_action :get_student, only: [:index, :show]
     def tutor_params
         params.require(:tutor).permit(:id, :first_name, :last_name, :email, :username, :password, :years_exp, :subject_taught, :tutor_bio)
     end
+
+    # def invalid_tutor?
+        
+    #     if @tutor == nil || current_user.id != @tutor.id
+    #         redirect_to invalid_viewer_path
+    #     end
+    # end
     
 end
 

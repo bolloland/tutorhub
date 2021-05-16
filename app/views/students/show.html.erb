@@ -1,5 +1,6 @@
 <i><Student#show></i>
 </br>
+
 CURRENT STUDENT PROFILE:</br>
 <p><i>Name:</i> <%= @student.first_name %> <%= @student.last_name %></br>
 <i>Grade:</i> <%= @student.grade %></br>
@@ -18,6 +19,6 @@ This is your page. From here you can:</br>
     <%= button_to "Schedule Lesson With This Student", new_tutor_student_lesson_path(@tutor.id, @student.id), method: :get %>~or~</br>
     <%= button_to "<< FIND A STUDENT", tutor_students_path, method: :get %>
 <% else %> 
-    Can't Find the User!
+    
 <% end %>
 

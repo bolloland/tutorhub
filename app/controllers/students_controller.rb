@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
     before_action :current_student, except: [:new, :create]
     before_action :get_student, except: [:index, :new, :create]
     before_action :get_tutor, only: [:index, :show]
+    # before_action :invalid_student?, only: [:edit, :show, :delete]
 
     def index
         @students = Student.all.order_by_grade
@@ -14,8 +15,8 @@ class StudentsController < ApplicationController
     end
     
     def show
-       
-    binding.pry   
+        # binding.pry 
+        invalid_student
     end
     
     def create 
@@ -58,8 +59,19 @@ class StudentsController < ApplicationController
     def student_params
         params.require(:student).permit(:id, :first_name, :last_name, :email, :username, :password, :grade, :subject_help, :student_bio, :alpha_by_subject, :order_by_grade)
     end
-    
+
+    def invalid_student
+        redirect_to student_path(@current_user.id) unless @current_user.class == Tutor || current_student.id == @student.id
+    end
 end
+
+# if @current_user.class == Student 
+#     if @student == nil || current_student.id != @student.id
+#     redirect_to student_path, notice: "Sorry, you don't have permission to see that page."
+# flash[:alert] = "Sorry, you don't have permission to see that page."
+    #     end
+    # end
+    
 
 # def current_user  
 #     @current_user ||= session[:current_user_id] && 

@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :users
   resources :students do
     resources :tutors do
       resources :lessons
-      
     end
   end
-    
+  
   resources :tutors do
     resources :students do
       resources :lessons 
-      
     end
   end
-      
+  
   resources :students
   resources :tutors
   resources :lessons
-
+  
+  devise_for :users
 
   get 'auth/:provider/callback' => 'sessions#tutor_omniauth'
   # get 'auth/:provider/callback' => 'sessions#student_omniauth'
@@ -34,6 +32,9 @@ Rails.application.routes.draw do
 
   get 'tutor_lessons', to: 'lessons#tutor_lessons'
   get 'student_lessons', to: 'lessons#student_lessons'
+
+  get 'invalid_viewer', to: 'students#invalid_viewer'
+  get 'invalid_viewer', to: 'tutors#invalid_viewer'
 
 
   root to: "home#index"
